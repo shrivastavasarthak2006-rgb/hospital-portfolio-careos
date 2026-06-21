@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #172033;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 80%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.careos-map {
+  height: min(68vh, 620px);
+  min-height: 430px;
+  width: 100%;
+  z-index: 0;
+}
+
+.careos-map .leaflet-control-attribution {
+  border-radius: 999px 0 0 0;
+  background: rgba(255, 255, 255, 0.82);
+  color: #64748b;
+  font-size: 10px;
+}
+
+.careos-map .leaflet-control-zoom {
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 14px 35px rgba(15, 31, 61, 0.12);
+}
+
+.careos-map .leaflet-control-zoom a {
+  border: 0;
+  color: #0f1f3d;
+}
+
+.careos-city-marker {
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.22);
+}
+
+.careos-city-marker span {
+  width: 16px;
+  height: 16px;
+  border: 4px solid #ffffff;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  box-shadow: 0 0 0 8px rgba(20, 184, 166, 0.16);
+}
+
+.leaflet-tooltip {
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: 0 10px 28px rgba(15, 31, 61, 0.12);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(59, 223, 204, 0.22);
+}
+
+@layer components {
+  .glass-card {
+    @apply border border-white/70 bg-white/[0.72] shadow-glass backdrop-blur-2xl;
+  }
+
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-care-teal;
+  }
+
+  .focus-ring {
+    @apply outline-none ring-care-blue/30 transition focus:ring-4;
+  }
+
+  .hospital-bg-shell {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hospital-bg-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/hospital-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(16px);
+    transform: scale(1.06);
+    opacity: 0.50;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hospital-bg-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Make About use same blurred background style (if requested via prop) */
+  .hospital-bg-section {
+    position: relative;
+  }
+
+  .hospital-bg-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/hospital-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(16px);
+    transform: scale(1.02);
+    opacity: 0.28;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hospital-bg-section > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
