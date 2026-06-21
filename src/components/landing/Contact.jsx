@@ -42,7 +42,7 @@ export default function Contact() {
   if (!validate()) return;
 
   try {
-    const response = await axios.post("https://hospital-portfolio-backend.vercel.app",form);
+    const response = await axios.post("https://hospital-portfolio-backend.onrender.com",form);
 
     console.log(response.data);
 

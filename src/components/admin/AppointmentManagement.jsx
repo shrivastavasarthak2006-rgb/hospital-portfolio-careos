@@ -27,7 +27,7 @@ export default function AppointmentManagement({
 
     try {
       await axios.delete(
-        `https://hospital-portfolio-backend.vercel.appapi/appointments/${id}`
+        `https://hospital-portfolio-backend.onrender.com/api/appointments/${id}`
       );
 
       fetchAppointments();

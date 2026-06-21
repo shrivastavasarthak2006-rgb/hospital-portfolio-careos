@@ -15,7 +15,7 @@ export default function AdminLogin() {
       setLoading(true);
 
       const res = await axios.post(
-        "https://hospital-portfolio-backend.vercel.app/api/admin/login",
+        "https://hospital-portfolio-backend.onrender.com/api/admin/login",
         {
           email,
           password,

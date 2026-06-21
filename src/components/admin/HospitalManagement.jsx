@@ -18,7 +18,7 @@ export default function HospitalManagement({
   const handleAddHospital = async () => {
     try {
       await axios.post(
-        "https://hospital-portfolio-backend.vercel.app",
+        "https://hospital-portfolio-backend.onrender.com",
         form
       );
 
@@ -40,7 +40,7 @@ export default function HospitalManagement({
   const handleDeleteHospital = async (id) => {
   try {
     await axios.delete(
-      `http://hospital-portfolio-backend.vercel.app/api/hospitals/${id}`
+      `https://hospital-portfolio-backend.onrender.com/api/hospitals/${id}`
     );
 
     fetchHospitals();
