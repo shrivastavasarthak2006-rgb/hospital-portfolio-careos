@@ -1,12 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
 import { Eye, EyeOff, ShieldCheck } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ export default function AdminLogin() {
 
       localStorage.setItem("token", res.data.token);
 
-      window.location.href = "/admin/dashboard";
+      navigate("/admin/dashboard");
     } catch (error) {
       console.error(error);
       alert("Invalid Email or Password");
