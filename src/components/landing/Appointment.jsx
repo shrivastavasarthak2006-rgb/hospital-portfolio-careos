@@ -30,7 +30,7 @@ export default function Appointment() {
 
     try {
       await axios.post(
-        "https://hospital-portfolio-backend.onrender.com",
+        "https://hospital-portfolio-backend.onrender.com/api/appointments",
         form
       );
 
