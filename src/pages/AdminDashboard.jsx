@@ -30,7 +30,7 @@ export default function AdminDashboard() {
 
   const fetchPatients = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/patients");
+    const res = await axios.get("http://hospital-portfolio-backend.vercel.app/api/patients");
 
     const patientsArray=res.data?.patients || [];
 
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
 
   const fetchHospitals = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/hospitals");
+    const res = await axios.get("http://hospital-portfolio-backend.vercel.app/api/hospitals");
     setHospitalsData(res.data.hospitals || []);
   } catch (error) {
     console.error(error);
@@ -61,7 +61,7 @@ export default function AdminDashboard() {
 
 const fetchAppointments = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/appointments");
+    const res = await axios.get("http://hospital-portfolio-backend.vercel.app/api/appointments");
     setAppointmentsData(res.data.appointments || []);
   } catch (error) {
     console.error(error);
@@ -71,7 +71,7 @@ const fetchAppointments = async () => {
 
 const fetchStats = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/dashboard-stats");
+    const res = await axios.get("http://hospital-portfolio-backend.vercel.app/api/dashboard-stats");
     setStats(res.data);
   } catch (error) {
     console.error(error);

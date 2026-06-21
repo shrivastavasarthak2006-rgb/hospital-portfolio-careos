@@ -20,7 +20,7 @@ export default function ContactManagement({ contacts, setContacts, fetchPatients
     const isConfirmed = window.confirm("Are you sure you want to delete this submission?");
     if (isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/api/patients/${id}`);
+        await axios.delete(`http://hospital-portfolio-backend.vercel.app/api/patients/${id}`);
         await fetchPatients();
       } catch (error) {
         console.error(error);
@@ -31,7 +31,7 @@ export default function ContactManagement({ contacts, setContacts, fetchPatients
 
   const handleResolve = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/patients/${id}/resolve`);
+      await axios.put(`http://hospital-portfolio-backend.vercel.app/api/patients/${id}/resolve`);
       // refresh list from backend so status changes are reflected
       await fetchPatients();
     } catch (error) {

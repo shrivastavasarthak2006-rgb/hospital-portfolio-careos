@@ -37,7 +37,7 @@ export default function Hero() {
             </a>
           </motion.div>
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-white/78">
-            {["HIPAA-ready architecture", "Live city intelligence", "Executive reporting"].map((item) => (
+            {["DPDP ACT-ready architecture", "Live city intelligence", "Executive reporting"].map((item) => (
               <span key={item} className="inline-flex items-center gap-2 rounded-full bg-white/12 px-4 py-2 backdrop-blur-xl">
                 <ShieldCheck size={16} className="text-care-teal" />
                 {item}

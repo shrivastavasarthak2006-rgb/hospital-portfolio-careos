@@ -30,7 +30,7 @@ export default function Appointment() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/appointments",
+        "https://hospital-portfolio-backend.vercel.app",
         form
       );
 
